@@ -43,5 +43,10 @@ export default function draftToHtml(
       }
     }
   }
-  return html.join('');
+  // return html.join('');
+  const res = html.join('');
+  if (res.length === 8 && res.substring(0, 7) === '<p></p>') {
+    return '';
+  }
+  return res;
 }
